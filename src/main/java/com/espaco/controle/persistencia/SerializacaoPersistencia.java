@@ -29,7 +29,7 @@ public class SerializacaoPersistencia {
 
     try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeArquivo))){
         @SuppressWarnings("unchecked")
-        List<T> listaObjetos = (List<T> ois.readObject());
+        List<T> listaObjetos = (List<T>) ois.readObject();
         System.out.println("Dados carregados por Serializacao de: "+ nomeArquivo);
         return listaObjetos;
     }catch (IOException | ClassNotFoundException e){
